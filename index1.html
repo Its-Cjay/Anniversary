@@ -10,19 +10,14 @@
             background: radial-gradient(circle at center, #0a0a0a, #000);
             color: white;
             font-family: 'Arial', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            min-height: 100vh; /* Changed from height to min-height */
             position: relative;
-            overflow: hidden;
         }
-		
 
         /* Star Background */
         .stars {
-            position: absolute;
+            position: fixed; /* Changed from absolute to fixed */
             width: 100%;
             height: 100%;
             background: url('https://www.transparenttextures.com/patterns/stardust.png');
@@ -37,7 +32,7 @@
 
         /* Music Controls */
         .music-controls {
-            position: absolute;
+            position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 1000;
@@ -57,91 +52,93 @@
             font-size: 24px;
         }
 
-        /* Letter Card with Flowery Side Decorations */
+        /* Letter Container - Now Scrollable */
         .letter-container {
             position: relative;
-            text-align: center;
+            margin: 50px auto;
             padding: 40px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
             width: 60%;
             backdrop-filter: blur(10px);
-            animation: fadeIn 1.5s ease-in-out;
             border: 4px solid #ff6699;
             z-index: 10;
             max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
         }
 
         /* Flower Decorations */
         .flower-left, .flower-right {
-            position: absolute;
+            position: fixed;
             width: 80px;
-            top: -20px;
             z-index: 20;
         }
 
         .flower-left {
-            left: -50px;
+            left: 20px;
+            top: 20px;
             transform: rotate(-10deg);
         }
 
         .flower-right {
-            right: -50px;
+            right: 20px;
+            top: 20px;
             transform: rotate(10deg);
         }
 
         .letter-container h1 {
-            font-size: 2.3rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: #ff6699;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            text-align: center;
         }
 
-      
-   
-    .letter-container p {
-        font-size: 1rem;
-        margin: 12px 0;
-        color: white;
-        line-height: 1.6;
-        text-align: justify; 
-        text-justify: inter-word; 
-    }
+        .letter-container p {
+            font-size: 1.3rem;
+            margin: 12px 0;
+            color: white;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
 
-    
-    .closing-line {
-        text-align: right;
-        margin-right: 20%;
-        font-style: italic;
-    }
+        .closing-line {
+            text-align: right;
+            margin-right: 20%;
+            font-style: italic;
+        }
 
-    .signature {
-        text-align: right;
-        margin-right: 20%;
-        font-weight: bold;
-        font-size: 1.4rem;
-    }
-
+        .signature {
+            text-align: right;
+            margin-right: 20%;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
 
         /* Fancy Button */
         button {
             margin-top: 20px;
-            padding: 10px 20px;
-            background-color: crimson;
+            padding: 12px 25px;
+            background: linear-gradient(to bottom, #ff4d4d, #cc0000);
             color: white;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 1.4rem;
             transition: background 0.3s ease, transform 0.2s ease;
             position: relative;
             z-index: 10;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
-		
+        
         button:hover {
-            background-color: darkred;
-            transform: scale(1.1);
+            background: linear-gradient(to bottom, #ff3333, #b30000);
+            transform: scale(1.05);
         }
 
         /* Fade-in Animation */
@@ -155,39 +152,39 @@
             .letter-container {
                 width: 85%;
                 padding: 30px 20px;
+                margin: 30px auto;
             }
             .flower-left, .flower-right {
                 width: 60px;
             }
             .flower-left {
-                left: -30px;
+                left: 10px;
             }
             .flower-right {
-                right: -30px;
+                right: 10px;
             }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <div class="stars"></div>
+
     <div class="letter-container">
-    <img src="img/flowers.png" alt="Flower" class="flower-left">
-    <img src="img/flowers.png" alt="Flower" class="flower-right">
+        <img src="img/flowers.png" alt="Flower" class="flower-left">
+        <img src="img/flowers.png" alt="Flower" class="flower-right">
 
-    <h1>To The Prettiest Girl in the World</h1>
-    <p>Happy 2 Years my love! 💖</p>
-    <p>Time flies so fast, it feels like it was just yesterday when we went to Cancai together, the place that brought us closer. Our relationship was 
-    something truly unexpected because you've always felt way out of my league, but I guess fate was on my side with this one (and no, waka nako gi lumay ha haha , I swear!).
-    Our relationship wasn't always filled with butterflies. There were lots of uncertainties and challenges, lots of almost break up situation. But here we are love, 
-    we made it! And it made our relationship and bond even stronger💙. Honestly, before you, I was ignorant to love. I didn't truly know what it felt like to be genuinely 
-    loved until you came into my life. You accepted me for who I am, even the parts of myself that I struggle to love. Thankyou for always being by my side love, for always choosing to stay, for showing how it feels to be 
-	unconditionally loved, and for everything. Tbh it'd be too long if i say everything right now. I know for sure just how great of a person you are, and I'm not even sure if there's someone as hardworking as you.
-	Baby, keep being the amazing person that you are. 
-    Know that I'll always have your back no matter what, so just keep on chasing your dreams, and I'll be right here by your side cheering you on. Always proud of you baby!💙💙💙</p>
-    
-    <p class="closing-line">Forever yours,</p>
-    <p class="signature">Your one and only</p>
-
+        <h1>Anniversary Letter</h1>
+        <p>Happy 2nd Anniversary my baby! 💖</p>
+        <p>Time flies so fast, it feels like just yesterday we went to Cancai together, the place that brought us closer. Our relationship was 
+        something truly unexpected because you've always felt way out of my league, but I guess fate was on my side with this one (and no, waka nako gi lumay , I swear!).
+        Our relationship wasn't always filled with butterflies. There were lots of uncertainties and challenges, lots of almost break up situation. But here we are love, 
+        we made it! And it made our relationship and bond even stronger💙. Honestly, before you, I was ignorant to love. I didn't truly know what it felt like to be genuinely 
+        loved until you came into my life. You accepted me for who I am, even the parts of myself that I struggle to love. Baby, keep being the amazing person that you are. 
+        Know that I'll always have your back no matter what, so just keep on pursuing your dreams, and I'll be right here by your side cheering you on!💙</p>
+        
+        <p class="closing-line">Forever yours,</p>
+        <p class="signature">Your Love</p>
 
         <button onclick="goBack()">Back</button>
     </div>
@@ -198,25 +195,19 @@
     </div>
     <audio id="bgMusic" loop>
         <source src="img/blue.mp3" type="audio/mpeg">
-       
     </audio>
 
     <script>
     function goBack() {
-        // Save current music state and position before navigating
         const music = document.getElementById('bgMusic');
         localStorage.setItem('musicPlaying', !music.paused);
         localStorage.setItem('musicTime', music.currentTime);
-        
-        // Navigate back to main page
         window.location.href = "index.html";
     }
 
-   
     const music = document.getElementById('bgMusic');
     let isPlaying = localStorage.getItem('musicPlaying') === 'true';
 
-    // Initialize music state
     window.addEventListener('load', function() {
         if (isPlaying) {
             music.play();
@@ -239,7 +230,6 @@
         localStorage.setItem('musicPlaying', isPlaying);
     }
 
-    // Try to autoplay when user interacts with page
     document.addEventListener('click', function() {
         if (!isPlaying && localStorage.getItem('musicPlaying') !== 'false') {
             music.play();
@@ -249,6 +239,6 @@
             localStorage.setItem('musicPlaying', true);
         }
     }, { once: true });
-</script>
+    </script>
 </body>
 </html>
